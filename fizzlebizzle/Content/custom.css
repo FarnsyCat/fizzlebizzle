@@ -1,0 +1,98 @@
+﻿/*My custom css and overrides*/
+
+/*Bootstrap css*/
+.jumbotron
+{  
+    margin-bottom: 0px;
+    border-style: solid;
+    border-color: indigo;
+    border-top: none;
+    z-index: 2;
+    box-shadow: 0 8px 16px -6px black;
+    color: snow;
+    background-color: slateblue;
+    text-align: center;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+}
+
+.jumbotron h1
+{
+   font-family: Candara;
+}
+.jumbotron h5
+{
+    color: palevioletred;
+    font-style: italic;
+    text-align: right;
+    margin-right: 100px;
+}
+
+.btn
+{
+    box-shadow: 0 8px 16px -6px black;
+}
+
+/*Custom*/
+
+#Bazz
+{
+    color: palevioletred;
+    font-size:large;
+    font-family: Meiryo;
+}
+
+#Rounded
+{
+    border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+    border:thin;
+    background-color:azure;
+}
+
+#Footer
+{
+    float: right;
+    height: 35px;
+    margin: 0px 50px 0px 0px;
+    text-align: right;
+    padding: 10px 30px;
+    width: 300px;
+}
+
+#Result
+{
+    border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+    border-bottom-left-radius: 1.5em;
+    border-bottom-right-radius: 1.5em;
+    text-align: center;
+    border: thick;
+    box-shadow: 0 8px 16px -6px black;
+    width: 50%;
+    margin: 0 auto;
+    position:relative;
+}
+
+#Generator
+{
+    text-align: center;
+    border: thick;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    box-shadow: 0 8px 16px -6px black;
+    width: 50%;
+    margin: 0 auto;
+    position:relative;
+}
+
+#numberbox
+{
+    border-radius: 2em;
+    margin: 5px 10px 5px 10px;
+}
+
+#paddeddiv
+{
+    padding: 10px 10px 10px 10px;
+}

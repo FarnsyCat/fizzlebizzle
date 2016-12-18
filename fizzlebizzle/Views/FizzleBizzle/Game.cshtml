@@ -1,0 +1,70 @@
+﻿@model fizzlebizzle.Models.FizzleBizzleModel
+
+@if (Model.isValid)
+{
+
+    <div id="Result" class="alert-success">
+        <h2>Your Results Are In!</h2>
+        <p>
+            @if (!Model.isFizzBuzzBazz)
+            {
+                foreach (var output in Model.FizzBuzz(Model.Start, Model.End))
+                {
+                    @output
+                }
+            }
+            else
+            {
+                foreach (var output in Model.FizzBuzzBazz(Model.Start, Model.End, Model.setPredicate()))
+                {
+                    @output
+                }
+            }
+            <br />
+        </p>
+
+    </div>
+}
+@using (Html.BeginForm("Game", "FizzleBizzle", FormMethod.Post))
+{
+    <div style="text-align:center">
+        <div id="Generator">
+            <h2>Play Fizzle Bizzle</h2>
+            
+            <span class="alert-danger">
+                @Html.ValidationSummary()
+            </span>
+            <div class="row paddeddiv">
+                @Html.LabelFor(m => m.Start)
+                @Html.TextBoxFor(m => m.Start, new { @type = "number", @id = "numberbox" }) 
+                @Html.LabelFor(m => m.End)
+                @Html.TextBoxFor(m => m.End, new { @type = "number", @id = "numberbox" })
+            </div>
+            <div class="row">
+                @Html.LabelFor(m => m.Fizz) 
+                @Html.TextBoxFor(m => m.Fizz, new { @type = "number", @id = "numberbox" })
+                @Html.LabelFor(m => m.Buzz)
+                @Html.TextBoxFor(m => m.Buzz, new { @type = "number", @id = "numberbox" })
+            </div>
+            <div class="row" id="Bazz">
+                Enable Bazz
+            </div>
+                <div class="row">
+                    @Html.CheckBoxFor(m => m.isFizzBuzzBazz, new { @type = "checkbox", @id = "switch-modal" })    
+                </div>
+                <br />
+                <div class="row">
+                    <div class="bazzdiv" id="div_bazz" @if (!Model.isFizzBuzzBazz) { <text> style="display:none;" </text>  }>
+                        @Html.TextBoxFor(m => m.Bazz, new { @type = "number", @id = "numberbox" })
+                        <div>
+                            @Html.EnumDropDownListFor(m => m.Predicate, "Select Predicate", new { @id = "numberbox" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <br />
+        <input type="submit" class="btn btn-primary" value="Generate"/>
+    </div>
+    <br />
+}
+
